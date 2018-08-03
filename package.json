@@ -1,0 +1,25 @@
+{
+  "name": "ghost-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "ghost": "^1.*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon current/index.js --watch content/themes/[your-theme-name] --ext hbs,js,css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prabhnith/Ghost.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prabhnith/Ghost/issues"
+  },
+  "homepage": "https://github.com/Prabhnith/Ghost#readme"
+}
