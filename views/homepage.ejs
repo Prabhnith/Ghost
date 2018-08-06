@@ -1,0 +1,176 @@
+<html lang="en" class="gr__mdbootstrap_com">
+    <% include ./partials/head %>
+<body class="fixed-sn homepage-v2" data-gr-c-s-loaded="true">
+    <% include ./partials/navigation %>
+    <% include ./partials/carousel %>
+    <!-- Main layout -->
+    <main>
+        <div class="container-fluid">
+            <!-- Magazine -->
+            <div class="row mt-5">
+                <!-- Main news -->
+                <div class="col-xl-9 col-md-12 pl-0">
+                    <!--Section: Magazine posts-->
+                    <section class="section extra-margins listing-section">
+                        <h4 class="font-weight-bold">
+                            <strong>LATESTS NEWS</strong>
+                        </h4>
+                        <hr class="mr-4 red">
+
+                        <!--Second row-->
+                        <div class="row  mb-4 mr-3">
+                            <div class="col-md-6 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-6 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                        </div>
+                        <!--/Second row-->
+                        
+                        <!--First row-->
+                        <div class="row mb-4 mr-3">
+                            <div class="col-md-4 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                        </div>
+                        <!--/First row-->
+
+                        <h4 class="font-weight-bold mt-5">
+                            <strong>TOP NEWS</strong>
+                        </h4>
+                        <hr class="mr-4 red">
+
+                        <!--Fourth row-->
+                        <div class="row single-post mb-4 mr-3">
+                            <% include ./partials/cardSocial %>
+                        </div>
+                        <!--/Fourth row-->
+
+                        <h4 class="font-weight-bold mt-5">
+                            <strong>SPORT</strong>
+                        </h4>
+                        <hr class="mr-4 red">
+
+                        <!--Fifth row-->
+                        <div class="row mb-4 mr-3">
+
+                            <div class="col-md-6 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-6 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                        </div>
+                        <!--/Fifth row-->
+
+                        <!--Sixth row-->
+                        <div class="row  mb-4 mr-3">
+                            <div class="col-md-4 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>                                
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>                                
+                            </div>
+                        </div>
+                        <!--/Sixth row-->
+
+                        <h4 class="font-weight-bold mt-5">
+                            <strong>LIFESTYLE</strong>
+                        </h4>
+                        <hr class="mr-4 red">
+
+                        <!--Seventh row-->
+                        <div class="row mb-4 mr-3">
+                            <div class="col-md-6 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-6 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                        </div>
+                        <!--/Seventh row-->
+
+                        <!--Eighth row-->
+                        <div class="row  mb-4 mr-3">
+                            <div class="col-md-4 my-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                            <div class="col-md-4 text-left mt-3">
+                                <% include ./partials/card %>
+                            </div>
+                        </div>
+                        <!--/Eighth row-->
+                    </section>
+                    <!--/Section: Magazine posts-->
+
+                    <!--Pagination dark-->
+                    <nav>
+                        <ul class="pagination pg-dark flex-center" style="height:auto">
+                            <!--Arrow left-->
+                            <li class="page-item">
+                                <a class="page-link waves-effect waves-effect" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <!--Numbers-->
+                            <li class="page-item active">
+                                <a class="page-link waves-effect waves-effect">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link waves-effect waves-effect">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link waves-effect waves-effect">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link wavfes-effect waves-effect">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link waves-effect waves-effect">5</a>
+                            </li>
+                            <!--Arrow right-->
+                            <li class="page-item">
+                                <a class="page-link waves-effect waves-effect" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!--/Pagination dark grey-->
+                </div>
+                <!--/ Main news -->
+                    <!-- Sidebar -->
+                    <div class="col-xl-3 col-md-12 widget-column mt-0">     
+                    <% include ./partials/categories %>
+                    <% include ./partials/popularPosts %>
+                    <% include ./partials/advertisement %>
+                    <% include ./partials/newsletter %>
+                    <% include ./partials/gallary %>
+                    <% include ./partials/featuredPosts %>
+                </div>
+                <!--/ Sidebar -->
+            </div>
+            <!--/ Magazine -->
+        </div>
+    </main>
+    <!--/ Main layout -->
+    <% include ./partials/footer %>
+    <% include ./partials/scripts %>
+    <div class="hiddendiv common"></div>
+</body>
+</html>

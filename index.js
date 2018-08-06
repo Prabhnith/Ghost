@@ -1,21 +1,37 @@
-var ghost = require('ghost');
-var express = require('express');
-var path = require('path');
-var parentApp = express();
-var utils = require('./node_modules/ghost/core/server/services/url/utils');
-var routes = express.Router();
+const ghost = require('ghost');
+const express = require('express');
+const path = require('path');
+const app = express();
+const cors = require('cors');
+const session = require('express-session');
+const errorHandler = require('errorhandler');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const utils = require('./node_modules/ghost/core/server/services/url/utils');
 
-routes.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
-  // res.json({
-  //         message: "Hello world! "
-  //       });
-  res.write("<h1>Hi Homepage</h1>");
-  res.end();
-});
-parentApp.use('/', routes);
+mongoose.promise = global.Promise;
+const isProduction = process.env.NODE_ENV === 'production';
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.use(cors());
+app.use(require('morgan')('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+
+if(!isProduction) {
+  app.use(errorHandler());
+}
+
+require('./models/Articles');
+app.use(require('./routes'));
+// mongoose.connect('mongodb://localhost/lightblog');
+// mongoose.set('debug', true);
 
 ghost().then(function (ghostServer) {
-  parentApp.use(utils.getSubdir(), ghostServer.rootApp);
-  ghostServer.start(parentApp);
+  app.use(utils.getSubdir(), ghostServer.rootApp);
+  ghostServer.start(app);
 });

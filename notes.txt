@@ -1,0 +1,12 @@
+Homepage
+https://mdbootstrap.com/previews/templates/magazine/html/homepage/v-2.html
+
+POstpage
+https://mdbootstrap.com/previews/templates/magazine/html/postpage/v-5.html
+
+Gallery Lightbox
+https://mdbootstrap.com/javascript/lightbox/
+
+
+CREATE blog with Node + React
+https://blog.cloudboost.io/learn-how-to-create-a-simple-blog-with-react-node-c05fa6889de3
