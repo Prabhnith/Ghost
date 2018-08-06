@@ -1,34 +1,21 @@
 var ghost = require('ghost');
 var express = require('express');
-// var path = require('path');
+var path = require('path');
+var parentApp = express();
+var utils = require('./node_modules/ghost/core/server/services/url/utils');
+var routes = express.Router();
 
-// var parentApp = express();
-
-// parentApp.get('/test', function (req, res) {
-//     res.send('Test Page');
-// });
-// fallback to ghost if a route isn't matched
-// ghost().then(function (ghostServer) {
-//     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
-//     ghostServer.start(parentApp);
-// });
-
+routes.get('/', function(req, res, next) {
+  // res.render('index', { title: 'Express' });
+  // res.json({
+  //         message: "Hello world! "
+  //       });
+  res.write("<h1>Hi Homepage</h1>");
+  res.end();
+});
+parentApp.use('/', routes);
 
 ghost().then(function (ghostServer) {
-    ghostServer.start();
+  parentApp.use(utils.getSubdir(), ghostServer.rootApp);
+  ghostServer.start(parentApp);
 });
-
-// var express = require('express');
-// var ghost   = require('ghost');
-
-// var parentApp = express();
-
-// parentApp.get('/test', function (req, res) {
-//     res.send('Test Page');
-// });
-
-
-// ghost().then(function (ghostServer) {
-//     parentApp.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
-//     ghostServer.start(parentApp);
-// });
